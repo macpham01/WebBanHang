@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="output">What is your color?</div>
+    <input id="YourColor" name="YourColor" type="text" />
+    <button type="submit" onclick="displayColor()">Submit</button>
+    <script>
+      let output = document.querySelector('.output')
+      let colors = ['đỏ', 'xanh', 'trắng', 'vàng']
+      console.log('hello worlddd')
+      document.querySelector('[name="YourColor"]').style.borderColor = '#333'
+      document.querySelector('[name="YourColor"]').style.outline = 'none'
+      let displayColor = () => {
+        let yourcolor = document.querySelector('[name="YourColor"]').value
+        console.log(yourcolor)
+        for (var i = 0; i < colors.length; i++) {
+          if (colors[i] === yourcolor) {
+            output.textContent = `Bạn đã nhập màu ${yourcolor}`
+            document.querySelector('[name="YourColor"]').style.borderColor =
+              'green'
+            break
+          } else {
+            output.textContent = `Màu bạn nhập vào ko hợp lệ`
+            document.querySelector('[name="YourColor"]').style.borderColor =
+              'red'
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
